@@ -26,7 +26,7 @@ gt←{
 ⍝ create csv files with good-turing smoothing of ⍺-grams for all lanugages
 l←{
   ⍝ get all language file names
-  lf←,⍥⊂⌿(⊃⍵)(2⊃⍵)∘.,⎕sh'ls ',⊃⍵
+  lf←,⍥⊂⌿⍵∘.,⎕sh'ls ',⊃⍵
   ⍺{(⍕¨⍺ gt⊃⎕nget⊃⍵)(⎕csv⍠'Overwrite'1)'-gt',⍨2⊃⍵}¨lf
 }
 
