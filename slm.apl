@@ -30,7 +30,7 @@ gt←{
 l←{
   ⍝ get all language file names
   lf←,⍥⊂⌿⍵∘.,⎕sh'ls ',⊃⍵
-  ⍺{(⍕¨⍺gt⊃⎕nget⊃⍵)(⎕csv⍠'Overwrite'1)'-gt',⍨2⊃⍵}¨lf
+  ⍺{(⍕¨⍺gt⊃⎕nget⊃⍵)(⎕csv⍠'Overwrite'1)(⍕⍺),⍨'-gt',⍨2⊃⍵}¨lf
 }
 
 ⍝ kneser-ney smoothing
