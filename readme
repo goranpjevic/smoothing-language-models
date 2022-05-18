@@ -2,3 +2,13 @@
 
 build and smooth language models using the 'good-turing' and 'kneser-ney'
 smoothing methods, as well as calculating the perplexity of a language model.
+
+usage:
+
+  slm.apl [option] [n-gram_size]
+
+options:
+
+  g : good-turing smoothing
+
+  k : kneser-ney smoothing
