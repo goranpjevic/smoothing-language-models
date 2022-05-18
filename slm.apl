@@ -9,7 +9,7 @@ ngrams←{
 ⍝ good-turing smoothing of ⍵ for ⍺-grams
 gt←{
   ⍝ get n-grams
-  n←⍺ngrams⍵
+  n←⍺ ngrams ⍵
   ⍝ table of frequencies of n-grams
   t←↑{(⍵⌷⍨⊢)¨⍋⌽⍵}{⍺(≢⍵)}⌸n
   all_word_freq←¯1↑[2]t
