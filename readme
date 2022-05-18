@@ -3,6 +3,14 @@
 build and smooth language models using the 'good-turing' and 'kneser-ney'
 smoothing methods, as well as calculating the perplexity of a language model.
 
+note:
+
+put example files in each language for generating the models in a directory
+named 'languages/'.  the names of the language files in the 'languages/'
+directory define the language names.
+
+the models for each language will be stored in a directory named 'models/'.
+
 usage:
 
   slm.apl [option] [n-gram_size]
