@@ -3,7 +3,8 @@
 ⍝ make ⍺-grams of ⍵
 ngrams←{
   w←⍵⊆⍨⊃∨/(⍵=⍥⎕c⊢)¨⎕a,'čšžàâæçéèêëîïôœùûüÿäöß'
-  ' '(≠⊆⊢)¨⍺(⊣,' ',⊢)/w
+  ng←(⊢,/(' '⍴⍨¯1+⊢),⍨' ',⊣)
+  ~∘' '¨~∘' '⊃,/,w∘.ng 2
 }
 
 ⍝ good-turing smoothing of ⍵ for ⍺-grams
