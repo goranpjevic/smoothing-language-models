@@ -60,7 +60,20 @@ m←{
 
 ⍝ calculate the perplexity of the models on a file named ⍵
 pp←{
-  ⍵
+  input_file←⊃⎕nget⍵
+  model_files←⎕sh'ls ',⍺,'*'
+  output←{
+    model_file←⎕csv⍵
+    ngram_size←⌈/,≢¨1 0/model_file
+    input_ngrams←ngram_size ngrams input_file
+    seen←1↓model_file
+    unseen_probability←⊃⌽1⌷model_file
+    seen_ngrams←,1 0/1↓model_file
+    ind←1+(≢model_file)|seen_ngrams⍳input_ngrams
+    perplexity←1÷×/(1÷≢input_ngrams)*⍨¨{⍵/⍨~0=⍵}⍎¨(,0 1/model_file)[ind]
+    ⍵,⍥⊂perplexity
+  }¨model_files
+  ⎕←↑output
 }
 
 main←{
