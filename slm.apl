@@ -66,7 +66,6 @@ pp←{
     model_file←⎕csv⍵
     ngram_size←⌈/,≢¨1 0/model_file
     input_ngrams←ngram_size ngrams input_file
-    seen←1↓model_file
     unseen_probability←⊃⌽1⌷model_file
     seen_ngrams←,1 0/1↓model_file
     ind←1+(≢model_file)|seen_ngrams⍳input_ngrams
