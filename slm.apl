@@ -69,7 +69,7 @@ pp←{
     unseen_probability←⊃⌽1⌷model_file
     seen_ngrams←,1 0/1↓model_file
     ind←1+(≢model_file)|seen_ngrams⍳input_ngrams
-    perplexity←1÷×/(1÷≢input_ngrams)*⍨¨{⍵/⍨~0=⍵}⍎¨(,0 1/model_file)[ind]
+    perplexity←1÷×/(1÷≢input_ngrams)*⍨{⍵/⍨~0=⍵}⍎¨(,0 1/model_file)[ind]
     ⍵,⍥⊂perplexity
   }¨model_files
   ⎕←↑output
