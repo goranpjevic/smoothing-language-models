@@ -21,7 +21,7 @@ gt←{
   pr←{((⍵+1)×N[⍵+1])÷N[⍵]}
   all_freq←,/∪all_word_freq
   0=⍴¯1↓all_freq:1 2⍴((⊂2⍴⊂''),⊂⍕p0)
-  p←p0,⊃¨(≢n)÷⍨¨pr¨¯1↓all_freq
+  p←p0,⊃¨(≢n)÷⍨pr¯1↓all_freq
   ff←1↓p
   fi←¯1↓all_freq
   ((⊂2⍴⊂''),⊂⍕p0)⍪↑⊃,/{ff[⍵],⍨¨t[⍸fi[⍵]=all_word_freq]}¨⍳≢ff
