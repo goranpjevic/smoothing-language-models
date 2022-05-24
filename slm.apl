@@ -21,7 +21,12 @@ gt←{
   pr←{((⍵+1)×N[⍵+1])÷N[⍵]}
   all_freq←,/∪all_word_freq
   0=⍴¯1↓all_freq:1 2⍴((⊂2⍴⊂''),⊂⍕p0)
-  p←p0,⊃¨(≢n)÷⍨pr¯1↓all_freq
+  ⍝ probabilities of seen n-grams
+  po←⊃¨(≢n)÷⍨pr¯1↓all_freq
+  avg_diff←(+/÷≢)|{⍵/⍨0>⍵}2-/po
+  ⍝ interpolate where the values are 0
+  p_inter←(⊃po){0=≢⍵:⍵⋄0=⊃⍵:(⍺+avg_diff),(⍺+avg_diff)∇1↓⍵⋄⍺,(⊃⍵)∇1↓⍵}po
+  p←p0,p_inter
   ff←1↓p
   fi←¯1↓all_freq
   ((⊂2⍴⊂''),⊂⍕p0)⍪↑⊃,/{ff[⍵],⍨¨t[⍸fi[⍵]=all_word_freq]}¨⍳≢ff
