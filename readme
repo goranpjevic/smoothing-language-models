@@ -11,6 +11,8 @@ directory define the language names.
 
 the models for each language will be stored in a directory named 'models/'.
 
+the 'kneser-ney' smoothing is not implemented correctly.
+
 usage:
 
   slm.apl [option] [args]
