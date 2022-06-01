@@ -19,14 +19,14 @@ usage:
 
 options:
 
-  good-turing smoothing:
+  generate good-turing smoothing models:
 
     g [n-gram_size]
 
-  kneser-ney smoothing:
+  generate kneser-ney smoothing models:
 
     k [n-gram_size]
 
-  perplexity:
+  calculate the perplexity of a file from all the generated models:
 
     p [file]
