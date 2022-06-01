@@ -13,10 +13,18 @@ the models for each language will be stored in a directory named 'models/'.
 
 usage:
 
-  slm.apl [option] [n-gram_size]
+  slm.apl [option] [args]
 
 options:
 
-  g : good-turing smoothing
+  good-turing smoothing:
 
-  k : kneser-ney smoothing
+    g [n-gram_size]
+
+  kneser-ney smoothing:
+
+    k [n-gram_size]
+
+  perplexity:
+
+    p [file]
